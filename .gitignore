@@ -1,0 +1,6 @@
+dataset
+flatten1
+models
+.ipynb_checkpoints/
+tweets.csv
+*.pkl
