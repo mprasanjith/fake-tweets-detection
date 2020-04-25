@@ -1,0 +1,19 @@
+version: 2
+
+workflows:
+  experiment-workflow:
+    steps:
+      -
+        name: "fake-tweets-experiment"
+        command: experiment.run_single_node
+        params:
+          name: fake-tweets-model-training
+          command: python ModelBuilder.py
+          container: paperspace/fastai:1.0-CUDA9.2-base-3.0-v1.0.7
+          machineType: p2.xlarge
+          clusterId: clbdo1h0q
+          modelPath: /artifacts
+          modelType: Generic
+      triggers:
+        branches:
+          only: master
